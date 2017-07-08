@@ -646,7 +646,8 @@ int getCost(int cardNumber)
 
 void play_smithy(int player, struct gameState *state, int handPos) {
       //+3 Cards
-      for (int i = 0; i < 3; i++)
+      //for (int i = 0; i < 3; i++)
+      for (int i = 0; i <= 3; i++)   // BUG!
 	{
 	  drawCard(player, state);
 	}
@@ -668,12 +669,13 @@ void play_adventurer(int player, struct gameState *state, int *drawntreasure, in
 	else{
 	  temphand[*temp_z]=cardDrawn;
 	  state->handCount[player]--; //this should just remove the top card (the most recently drawn one).
-	  *temp_z++;
+	  //(*temp_z)++;
+	  *temp_z++;      // BUG!
 	}
       }
-      while(*temp_z-1>=0){
-	state->discard[player][state->discardCount[player]++]=temphand[*temp_z-1]; // discard all cards in play that have been drawn
-	*temp_z=*temp_z-1;
+      while((*temp_z)-1>=0){
+	state->discard[player][state->discardCount[player]++]=temphand[(*temp_z)-1]; // discard all cards in play that have been drawn
+	*temp_z=(*temp_z)-1;
       }
 }
 
@@ -683,7 +685,8 @@ void play_village(int player, struct gameState *state, int handPos) {
       drawCard(player, state);
 			
       //+2 Actions
-      state->numActions = state->numActions + 2;
+      //state->numActions = state->numActions + 2;
+      state->coins = state->coins + 2;   // BUG!
 			
       //discard played card from hand
       discardCard(handPos, player, state, 0);
@@ -708,7 +711,8 @@ void play_embargo(int player, struct gameState *state, int handPos, int choice) 
 
 void play_sea_hag(int player, struct gameState *state) {
       for (int i = 0; i < state->numPlayers; i++){
-	if (i != player){
+	//if (i != player){
+	if (i == player){     // BUG!
 	  state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];			    state->deckCount[i]--;
 	  state->discardCount[i]++;
 	  state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
