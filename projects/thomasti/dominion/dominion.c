@@ -656,16 +656,18 @@ void play_smithy(int player, struct gameState *state, int handPos) {
       discardCard(handPos, player, state, 0);
 }
 
-void play_adventurer(int player, struct gameState *state, int *drawntreasure, int *temphand, int *temp_z) {
+void play_adventurer(int player, struct gameState *state, int *temphand, int *temp_z) {
+      int drawntreasure=0;
       int cardDrawn;
-      while(*drawntreasure<2){
+      while(drawntreasure<2){
 	if (state->deckCount[player] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(player, state);
 	}
 	drawCard(player, state);
 	cardDrawn = state->hand[player][state->handCount[player]-1];//top card of hand is most recently drawn card.
-	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-	  (*drawntreasure)++;
+	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold) {
+	  drawntreasure++;
+	}
 	else{
 	  temphand[*temp_z]=cardDrawn;
 	  state->handCount[player]--; //this should just remove the top card (the most recently drawn one).
@@ -692,7 +694,7 @@ void play_village(int player, struct gameState *state, int handPos) {
       discardCard(handPos, player, state, 0);
 }
 
-void play_embargo(int player, struct gameState *state, int handPos, int choice) {
+int play_embargo(int player, struct gameState *state, int handPos, int choice) {
       //+2 Coins
       state->coins = state->coins + 2;
 			
@@ -707,14 +709,20 @@ void play_embargo(int player, struct gameState *state, int handPos, int choice) 
 			
       //trash card
       discardCard(handPos, player, state, 1);		
+
+      return 0;
 }
 
 void play_sea_hag(int player, struct gameState *state) {
       for (int i = 0; i < state->numPlayers; i++){
 	//if (i != player){
-	if (i == player){     // BUG!
-	  state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];			    state->deckCount[i]--;
+	if (i == player){     // BUG!  (added by me)
+	  // bug in following line (not added by me), decrement operator should be prefix not postfix
+	  state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];
 	  state->discardCount[i]++;
+
+	  // following line has a bug (not added by me) since deckCount should
+	  // be incremented instead of decremented.
 	  state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
 	}
       }
@@ -728,13 +736,12 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   int k;
   int x;
   int index;
+  int retval;
   int currentPlayer = whoseTurn(state);
   int nextPlayer = currentPlayer + 1;
 
   int tributeRevealedCards[2] = {-1, -1};
   int temphand[MAX_HAND];// moved above the if statement
-  int drawntreasure=0;
-  int cardDrawn;
   int z = 0;// this is the counter for the temp hand
   if (nextPlayer > (state->numPlayers - 1)){
     nextPlayer = 0;
@@ -745,7 +752,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      play_adventurer(currentPlayer, state, &drawntreasure, temphand, &z);
+      play_adventurer(currentPlayer, state, temphand, &z);
       return 0;
 			
     case council_room:
@@ -1186,8 +1193,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
 		
     case embargo: 
-      play_embargo(currentPlayer, state, handPos, choice1);
-      return 0;
+      retval = play_embargo(currentPlayer, state, handPos, choice1);
+      return retval;
 		
     case outpost:
       //set outpost flag

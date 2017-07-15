@@ -29,6 +29,55 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
+#tests.out: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c bst.c compare.c
+unittestresults.out: unittest1.c dominion.o rngs.o # unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o rngs.o
+	echo "Result for running dominion.c tests:" > unittestresults.out
+	
+	# getCost()
+	echo "unittest1.c:" >> unittestresults.out
+	gcc -o unittest1 dominion.o rngs.o unittest1.c $(CFLAGS)
+	unittest1 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	# scoreFor()
+	echo "unittest2.c:" >> unittestresults.out
+	gcc -o unittest2 dominion.o rngs.o unittest2.c $(CFLAGS)
+	unittest2 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	# fullDeckCount()
+	echo "unittest3.c:" >> unittestresults.out
+	gcc -o unittest3 dominion.o rngs.o unittest3.c $(CFLAGS)
+	unittest3 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	# isGameOver()
+	echo "unittest4.c:" >> unittestresults.out
+	gcc -o unittest4 dominion.o rngs.o unittest4.c $(CFLAGS)
+	unittest4 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	#
+	# play_adventurer
+	echo "cardtest1.c:" >> unittestresults.out
+	gcc -o cardtest1 dominion.o rngs.o cardtest1.c $(CFLAGS)
+	cardtest1 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out 
+	#
+	# play_smithy
+	echo "cardtest2.c:" >> unittestresults.out
+	gcc -o cardtest2 dominion.o rngs.o cardtest2.c $(CFLAGS)
+	cardtest2 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	#
+	# play_village
+	echo "cardtest3.c:" >> unittestresults.out
+	gcc -o cardtest3 dominion.o rngs.o cardtest3.c $(CFLAGS)
+	cardtest3 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	#
+	# play_sea_hag
+	echo "cardtest4.c:" >> unittestresults.out
+	gcc -o cardtest4 dominion.o rngs.o cardtest4.c $(CFLAGS)
+	cardtest4 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
