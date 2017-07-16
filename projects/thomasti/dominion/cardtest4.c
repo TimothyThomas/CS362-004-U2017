@@ -41,17 +41,10 @@ int main() {
             G.discardCount[p]++;
         }
     }
-    printf("game initialized\n");
     // Now put sea_hag at position 0 of player 0, and have player 0 play the card 
     G.hand[0][0] = sea_hag;
     play_sea_hag(0, &G);
 
-    for (p = 0; p < G.numPlayers; p++) {
-        for (i = 0; i < 4; i++ ) {
-            printf("Player %d deck %d:  %d\n", p, i, G.deck[p][i]);
-            printf("Player %d discard %d:  %d\n", p, i, G.discard[p][i]);
-        }
-    }
 
     // Test that player 1 discarded top deck card
     if (G.discard[1][G.discardCount[1]-1] == gold) printf("play_sea_hag() test P1 top of deck discarded PASS\n");

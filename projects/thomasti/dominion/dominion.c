@@ -656,7 +656,7 @@ void play_smithy(int player, struct gameState *state, int handPos) {
       discardCard(handPos, player, state, 0);
 }
 
-void play_adventurer(int player, struct gameState *state, int *temphand, int *temp_z) {
+void play_adventurer(int player, struct gameState *state, int *temphand, int *temp_z, int handPos) {
       int drawntreasure=0;
       int cardDrawn;
       while(drawntreasure<2){
@@ -752,7 +752,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      play_adventurer(currentPlayer, state, temphand, &z);
+      play_adventurer(currentPlayer, state, temphand, &z, handPos);
       return 0;
 			
     case council_room:
