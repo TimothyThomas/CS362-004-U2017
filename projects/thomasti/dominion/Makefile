@@ -72,6 +72,24 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	cardtest4 >> unittestresults.out
 	gcov -b dominion.c >> unittestresults.out
 
+randomtestresults.out: randomtestcard1.c randomtestcard2.c randomtestadventurer.c dominion.o rngs.o
+	echo "Result for running dominion.c random tests:" > randomtestresults.out
+	# play_village
+	echo "randomtestcard1.c:" >> randomtestresults.out
+	gcc -o randomtestcard1 dominion.o rngs.o randomtestcard1.c $(CFLAGS)
+	randomtestcard1 >> randomtestresults.out
+	gcov -b dominion.c >> randomtestresults.out
+	# play_sea_hag
+	echo "randomtestcard2.c:" >> randomtestresults.out
+	gcc -o randomtestcard2 dominion.o rngs.o randomtestcard2.c $(CFLAGS)
+	randomtestcard2 >> randomtestresults.out
+	gcov -b dominion.c >> randomtestresults.out
+	# play_adventurer
+	echo "randomtestadventurer.c:" >> randomtestresults.out
+	gcc -o randomtestadventurer dominion.o rngs.o randomtestadventurer.c $(CFLAGS)
+	randomtestadventurer >> randomtestresults.out
+	gcov -b dominion.c >> randomtestresults.out 
+
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
