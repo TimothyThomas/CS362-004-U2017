@@ -26,7 +26,6 @@
 int main() {
 
     srand(time(NULL));
-    int numplayers;
     int player;
     int position;
     int i;  // loop counter
@@ -45,15 +44,15 @@ int main() {
         /*
          *  INITIALIZE A RANDOM GAME STATE 
         */
-        numplayers = 0;
-        while (numplayers < 1) {
-            numplayers = rand() % MAX_PLAYERS_TEST;
+        G.numPlayers = 0;
+        while (G.numPlayers < 1) {
+            G.numPlayers = rand() % MAX_PLAYERS_TEST;
         }
 
         int invalid_state = 1;
         while (invalid_state) {
 
-            for (player = 0; player < numplayers; player++) {
+            for (player = 0; player < G.numPlayers; player++) {
 
                 // Randomize players' decks
                 G.deckCount[player] = rand() % MAX_DECK_TEST; 
@@ -78,7 +77,8 @@ int main() {
                 // A max discard size of 20 is reasonable. 
                 G.discardCount[player] = rand() % MAX_INITIAL_DISCARD; 
                 for (i = 0; i < G.deckCount[player]; i++) {
-                    G.discard[player][i] = G.deck[player][--G.deckCount[player]]; 
+                    G.discard[player][i] = G.deck[player][G.deckCount[player]-1]; 
+                    G.deckCount[player]--;
                 }
             }
 
@@ -88,19 +88,17 @@ int main() {
             // Randomize  coins for current player
             G.coins = rand() % 500; 
 
-            // Choose a player at random to have the village and put in hand at a random position
-            currentPlayer = rand() % numplayers;
+            // Choose a player at random to have the sea_hag and put in hand at a random position
+            currentPlayer = rand() % G.numPlayers;
             position = rand() % G.handCount[currentPlayer];
             G.hand[currentPlayer][position] = village;
 
-            // Make sure player's deck+discard has at least 1 card
-            // to draw, otherwise we would go into an infinite
-            // loop inside play_village (this should be considered a BUG!!)
-            if (G.deckCount[currentPlayer] + G.discardCount[currentPlayer] >= 1) {
-                invalid_state = 0;
-            }
+            invalid_state = 0;
+
         }
 
+        // Set played cards pile to 0 so we can check for discard
+        G.playedCardCount = 0;
         // Copy the initial game state
         memcpy(&initG, &G, sizeof(struct gameState));
 
@@ -120,8 +118,9 @@ int main() {
         int expected = initG.handCount[currentPlayer];
         int got = G.handCount[currentPlayer];
         if (got != expected) { 
-            printf("TEST %d: current player 0 NET additional cards in hand **FAIL**. "
-                   "Exepected handCount=%d, got handCount=%d\n", test_count, expected, got);
+            if (PRINT_FAILURES) 
+                printf("TEST %d: current player 0 NET additional cards in hand **FAIL**. "
+                    "Exepected handCount=%d, got handCount=%d\n", test_count, expected, got);
             failed_flag = 1;
             /*
             printf("Hand before:\n");
@@ -176,8 +175,8 @@ int main() {
             failed_flag = 1;
         }
 
-        // test that game state has not changed for the other players
-        for (player = 0; player < numplayers; player++) {
+        // test that other players discarded top deck card and gained a curse
+        for (player = 0; player < G.numPlayers; player++) {
             if (player == currentPlayer) continue;
 
             if (G.handCount[player] != initG.handCount[player]) {

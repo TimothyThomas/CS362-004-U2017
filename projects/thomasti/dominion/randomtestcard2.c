@@ -20,7 +20,7 @@
 #define MAX_DECK_TEST 500
 #define MAX_INITIAL_DISCARD 20
 #define MAX_PLAYERS_TEST 4
-#define NUM_TESTS 1e4 
+#define NUM_TESTS 10000
 #define PRINT_FAILURES 0
 
 int main() {
@@ -93,13 +93,6 @@ int main() {
             position = rand() % G.handCount[currentPlayer];
             G.hand[currentPlayer][position] = sea_hag;
 
-            // Make sure player's deck+discard has at least 1 card
-            // to draw, otherwise we would go into an infinite
-            // loop inside play_sea_hag (this should be considered a BUG!!)
-            /*
-            if (G.deckCount[currentPlayer] + G.discardCount[currentPlayer] >= 1) {
-            }
-            */
             invalid_state = 0;
 
         }

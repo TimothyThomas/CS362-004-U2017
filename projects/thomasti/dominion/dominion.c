@@ -647,7 +647,8 @@ int getCost(int cardNumber)
 int play_smithy(int player, struct gameState *state, int handPos) {
       //+3 Cards
       //for (int i = 0; i < 3; i++)
-      for (int i = 0; i <= 3; i++)   // BUG!
+      int i;
+      for (i = 0; i <= 3; i++)   // BUG!
 	{
 	  drawCard(player, state);
 	}
@@ -726,7 +727,8 @@ int play_embargo(int player, struct gameState *state, int handPos, int choice) {
 }
 
 int play_sea_hag(int player, struct gameState *state, int handPos) {
-      for (int i = 0; i < state->numPlayers; i++){
+      int i;
+      for (i = 0; i < state->numPlayers; i++){
             if (i == player){     // BUG!  (added by me)
                 // bug in following line (not added by me), decrement operator should be prefix not postfix
                 state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];

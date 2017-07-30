@@ -97,4 +97,4 @@ all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out 
-	rm -f testDrawCard testDrawCard.exe cardtest? unittest? randomtestcard? randomtestadventurer
+	rm -f testDrawCard badTestDrawCard testDrawCard.exe cardtest? unittest? randomtestcard? randomtestadventurer
