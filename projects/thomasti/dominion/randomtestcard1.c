@@ -1,9 +1,8 @@
 /* -----------------------------------------------------------------------
- * Random Test for play_adventurer() in dominion.c 
+ * Random Test for play_village() in dominion.c 
  *
- * The adventurer card allows the player to reveal cards in the deck
- * until 2 treasure cards are found.  The 2 treasure cards go to the hand
- * and the other revealed cards are discarded.
+ * The village card gives the player 1 additional card and
+ * 2 additional actions.
  * -----------------------------------------------------------------------
  */
 
@@ -29,7 +28,6 @@ int main() {
     srand(time(NULL));
     int numplayers;
     int player;
-    int card;
     int position;
     int i;  // loop counter
     int test_count;
@@ -66,7 +64,7 @@ int main() {
                 }
                 
                 // Randomize players' hands (players must have at least 1 card in
-                // hand to hold the adventurer
+                // hand to hold the village
                 while (1) {
                     G.handCount[player] = rand() % MAX_HAND_TEST; 
                     if (G.handCount[player] > 0)
@@ -84,28 +82,21 @@ int main() {
                 }
             }
 
-            // Choose a player at random to have the adventurer and put in hand at a random position
+            // Randomize  numActions for current player
+            G.numActions = rand() % 500; 
+                
+            // Randomize  coins for current player
+            G.coins = rand() % 500; 
+
+            // Choose a player at random to have the village and put in hand at a random position
             currentPlayer = rand() % numplayers;
             position = rand() % G.handCount[currentPlayer];
-            G.hand[currentPlayer][position] = adventurer;
+            G.hand[currentPlayer][position] = village;
 
-            // Make sure player's deck+discard has at least 2 treasure cards
+            // Make sure player's deck+discard has at least 1 card
             // to draw, otherwise we would go into an infinite
-            // loop inside play_adventurer (this should be considered a BUG!!)
-            int treasure_count = 0; 
-            for (i = 0; i < G.deckCount[currentPlayer]; i++) {
-                card = G.deck[currentPlayer][i];
-                if (card == copper || card == silver || card == gold) { 
-                    treasure_count++; 
-                }
-            }
-            for (i = 0; i < G.discardCount[currentPlayer]; i++) {
-                card = G.discard[currentPlayer][i];
-                if (card == copper || card == silver || card == gold) { 
-                    treasure_count++; 
-                }
-            }
-            if (treasure_count >=2) {
+            // loop inside play_village (this should be considered a BUG!!)
+            if (G.deckCount[currentPlayer] + G.discardCount[currentPlayer] >= 1) {
                 invalid_state = 0;
             }
         }
@@ -118,20 +109,19 @@ int main() {
          *
          *  G will be the state after function call and initG the state before the call.
         */
-        play_adventurer(currentPlayer, &G, position);
+        play_village(currentPlayer, &G, position);
 
 
         /*
          *  COMPARE RESULTS TO ORACLES 
         */
 
-        // Test that hand now has 1 additional card (+2 treasure; -1 for discarded adventurer)
-        int expected = initG.handCount[currentPlayer] + 1;
+        // Test that hand now has 0 NET additional cards (+1 drawn; -1 for discarded village)
+        int expected = initG.handCount[currentPlayer];
         int got = G.handCount[currentPlayer];
         if (got != expected) { 
-            if (PRINT_FAILURES) 
-                printf("TEST %d: current player 1 NET additional card in hand **FAIL**. "
-                    "Exepected handCount=%d, got handCount=%d\n", test_count, expected, got);
+            printf("TEST %d: current player 0 NET additional cards in hand **FAIL**. "
+                   "Exepected handCount=%d, got handCount=%d\n", test_count, expected, got);
             failed_flag = 1;
             /*
             printf("Hand before:\n");
@@ -141,59 +131,42 @@ int main() {
             */
         }
         
-        // Test that 2 additional treasure cards are now in hand
-        int count_before = 0;
-        for (i = 0; i < initG.handCount[currentPlayer]; i++) {
-            card = initG.hand[currentPlayer][i];
-            if (card == gold || card == silver || card == copper) count_before++;
-        }
-        expected = 2 + count_before;
-        got = 0;
-        for (i = 0; i < G.handCount[currentPlayer]; i++) {
-            card = G.hand[currentPlayer][i];
-            if (card == gold || card == silver || card == copper) got++;
-        }
+        // Test that 2 actions added to numActions 
+        expected = initG.numActions + 2;
+        got = G.numActions;
         if (got != expected) {
             if (PRINT_FAILURES) 
-                printf("TEST %d: current player gained +2 treasure cards in hand **FAIL**.\n"
+                printf("TEST %d: +2 actions **FAIL**.  "
                         "Exepected %d, got %d\n", test_count, expected, got);
             failed_flag = 1;
-            /*
-            printf("Hand before:\n");
-            printHand(currentPlayer, &initG);
-            printf("Hand after:\n");
-            printHand(currentPlayer, &G);
-            */
         }
         
-        // test that treasure cards came from current player deck/discard
+        // Test no change to player's coins
+        expected = initG.coins;
+        got = G.coins;
+        if (got != expected) {
+            if (PRINT_FAILURES) 
+                printf("TEST %d: no change to coins **FAIL**.  "
+                        "Exepected %d, got %d\n", test_count, expected, got);
+            failed_flag = 1;
+        }
+        
+        // test that additional card came from current player deck/discard
         if (G.deckCount[currentPlayer] + G.discardCount[currentPlayer] != 
             initG.deckCount[currentPlayer] + initG.discardCount[currentPlayer] - 1) {
             if (PRINT_FAILURES) 
-                printf("TEST %d: new cards came from currentPlayer piles **FAIL**\n", test_count);
+                printf("TEST %d: +1 card came from currentPlayer piles **FAIL**\n", test_count);
             failed_flag = 1;
-            /*
-            printf("State before:\n");
-            printState(&initG);
-            printf("State after:\n");
-            printState(&G);
-            */
         }
 
-        // test that adventurer was discarded
-        if (G.hand[currentPlayer][position] == adventurer) {
+        // test that village was discarded
+        if (G.hand[currentPlayer][position] == village) {
             if (PRINT_FAILURES) 
-                printf("TEST %d: adventurer removed from hand **FAIL**\n", test_count);
-            /*
-            printf("Hand before:\n");
-            printHand(currentPlayer, &initG);
-            printf("Hand after:\n");
-            printHand(currentPlayer, &G);
-            */
+                printf("TEST %d: village removed from hand **FAIL**\n", test_count);
             failed_flag = 1;
         }
         
-        // test number of cards in hand, discard and deck are unchanged 
+        // test total number of cards in hand, discard and deck are unchanged 
         got = G.handCount[currentPlayer] + G.deckCount[currentPlayer] + G.discardCount[currentPlayer];
         expected = initG.handCount[currentPlayer] + initG.deckCount[currentPlayer] + initG.discardCount[currentPlayer];
         if (got != expected) {
@@ -202,7 +175,6 @@ int main() {
                         "Exepected %d, got %d\n", test_count, expected, got);
             failed_flag = 1;
         }
-
 
         // test that game state has not changed for the other players
         for (player = 0; player < numplayers; player++) {
@@ -234,7 +206,7 @@ int main() {
     }
 
     printf("##############################################################################\n");
-    printf("  RANDOM TEST SUMMARY for play_adventurer \n");
+    printf("  RANDOM TEST SUMMARY for play_village \n");
     printf("  Number of tests: %d\n", num_tests);
     printf("  passed: %d\n", tests_passed);
     printf("  failed: %d\n", tests_failed);
