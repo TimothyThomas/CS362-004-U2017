@@ -43,7 +43,7 @@ int main() {
     }
     // Now put sea_hag at position 0 of player 0, and have player 0 play the card 
     G.hand[0][0] = sea_hag;
-    play_sea_hag(0, &G);
+    play_sea_hag(0, &G, 0);
 
 
     // Test that player 1 discarded top deck card

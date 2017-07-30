@@ -26,8 +26,6 @@ int main() {
     G.deckCount[player] = 0;
     G.discardCount[player] = 0;
     G.playedCardCount = 0;
-    int temphand[MAX_HAND];
-    int z = 0;   //temp hand counter
 
     // Put a few cards in hand. How many and type aren't
     // really important for this test since we just want to test the
@@ -57,7 +55,7 @@ int main() {
     memcpy(&initG, &G, sizeof(struct gameState));
 
     // make the call.  G is now the state after function call and initG before the call.
-    play_adventurer(player, &G, temphand, &z, 0);
+    play_adventurer(player, &G, 0);
 
     // Test that hand now has 1 additional card (+2 treasure; -1 for discarded adventurer)
     int expected = initG.handCount[player] + 1;
