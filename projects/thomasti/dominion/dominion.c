@@ -646,8 +646,8 @@ int getCost(int cardNumber)
 
 int play_smithy(int player, struct gameState *state, int handPos) {
       //+3 Cards
-      //for (int i = 0; i < 3; i++)
       int i;
+      //for (int i = 0; i < 3; i++)   // No Bug
       for (i = 0; i <= 3; i++)   // BUG!
 	{
 	  drawCard(player, state);
@@ -681,7 +681,7 @@ int play_adventurer(int player, struct gameState *state, int handPos) {
             }
       }
       while(z >= 0){     // BUG!  off by 1 error
-      //while(z-1 >= 0){
+      //while(z-1 >= 0){   // No Bug
 	state->discard[player][state->discardCount[player]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
       }
@@ -699,7 +699,7 @@ int play_village(int player, struct gameState *state, int handPos) {
       drawCard(player, state);
 			
       //+2 Actions
-      //state->numActions = state->numActions + 2;
+      //state->numActions = state->numActions + 2;  // No Bug
       state->coins = state->coins + 2;   // BUG!
 			
       //discard played card from hand
@@ -731,12 +731,12 @@ int play_sea_hag(int player, struct gameState *state, int handPos) {
       for (i = 0; i < state->numPlayers; i++){
             if (i == player){     // BUG!  (added by me)
                 // bug in following line (not added by me), decrement operator should be prefix not postfix
-                state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];
+                state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];  // BUG! (pre-existing)
                 state->discardCount[i]++;
                 
                 // following line has a bug (not added by me) since deckCount should
                 // be incremented instead of decremented.
-                state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
+                state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse   // BUG! (pre-existing)
 
             /*Working version of this function for testing
                if (i != player){
