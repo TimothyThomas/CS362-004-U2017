@@ -1,0 +1,87 @@
+******************* BUG REPORT #1 *********************************************
+
+Bug Report Title:  village card only gives 1 additional action instead of 2 
+
+Description: the function which implements the effect of the "Village" card
+does not reward the player with the appropriate number of additional actions.
+The card states that the player should receive 1 additional card and 2
+additional actions.  However, upon comparing the game state before and after
+the Village is played, it is apparent that only 1 action is being added
+to the game state.  It appears the +1 additional card is working correctly.
+
+This bug seems to occur every time a player plays the Village (i.e. whenever the
+villageCard() function is called).
+
+Steps to repeat:
+1. Set up a valid gameState.
+2. Save the number of actions.
+3. Call villageCard().
+4. Check number of actions.
+Result: Number of actions after call to villageCard() is 1 less than expected.
+
+The following code is where the bug is located.  The line marked with "CONTAINS
+BUG" should be:  state->numActions + 2 instead of state->numActions+1.
+
+#### START OF CODE
+int villageCard(int currentPlayer, int handPos, struct gameState *state) {
+	//+1 Card
+	drawCard(currentPlayer, state);
+	
+	//+2 Actions
+	state->numActions = state->numActions + 1;  /* THIS LINE CONTAINS BUG /*
+	
+	//discard played card from hand
+	discardCard(handPos, currentPlayer, state, 0);
+	return 0;
+}
+#### END OF CODE
+
+
+
+******************* BUG REPORT #2 *********************************************
+Bug Report Title:  adventurer card only draws 1 treasure instead of 2 
+
+Description: the function which implements the effect of the "Adventurer" card,
+adventurerCard() seems to only cause the player to draw 1 treasure card instead
+of 2 treasure cards. The Adventurer card text indicates that the player should
+continue drawing cards until 2 treasure cards have been drawn.  However,
+when examining the game state before and after the adventurerCard() function is
+called, one can see that the player only ends up with 1 additional treasure
+card.  This bug seems to occur every time a player plays the
+Adventurer (i.e. whenever the adventurerCard() function is called).
+
+
+Steps to repeat:
+1. Set up any valid gameState with current player holding the Adventurer.
+2. Observe number of treasure cards in current player's hand.
+3. Call adventurerCard(), with current player and current game state.
+4. Observe number of treasure cards in current player's hand.
+Result: Number of treasure cards in hand after call is only 1 more than before
+the call.
+
+The following code is where the bug is located.  In the line marked with "CONTAINS
+BUG" drawntreasure should be initialized to 0 instead of 1.
+If drawntreasure is set to 1, the while loop will end after 1 only treasure card is
+drawn.  But the Adventurer specifies 2 treasure cards should be drawn.
+
+Recommend changing the line with the bug to:  int drawntreasure=0;
+
+int adventurerCard(int currentPlayer, int temphand[], struct gameState *state) {
+	int drawntreasure=1;    /* CONTAINS BUG /*
+	int cardDrawn;
+	int z=0;
+	while(drawntreasure<2){
+		if (state->deckCount[currentPlayer] < 1){ //if the deck is empty we need to shuffle discard and add to deck
+		shuffle(currentPlayer, state);
+		}
+		drawCard(currentPlayer, state);
+		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+			drawntreasure++;
+		else{
+			temphand[z]=cardDrawn;
+			state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+			z++;
+		}
+	}
+	
