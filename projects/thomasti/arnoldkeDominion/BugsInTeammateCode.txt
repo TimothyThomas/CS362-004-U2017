@@ -1,6 +1,10 @@
 ******************* BUG REPORT #1 *********************************************
 
 Bug Report Title:  village card only gives 1 additional action instead of 2 
+Bug Report ID: Assignment5-thomasti-1
+Severity: very high (incorrect game behavior)
+Priority: very high (incorrect game behavior)
+Version:  version of dominion.c submitted by teammate in assignment 2
 
 Description: the function which implements the effect of the "Village" card
 does not reward the player with the appropriate number of additional actions.
@@ -40,6 +44,11 @@ int villageCard(int currentPlayer, int handPos, struct gameState *state) {
 
 ******************* BUG REPORT #2 *********************************************
 Bug Report Title:  adventurer card only draws 1 treasure instead of 2 
+Bug Report ID: Assignment5-thomasti-2
+Severity: very high (incorrect game behavior)
+Priority: very high (incorrect game behavior)
+Version:  version of dominion.c submitted by teammate in assignment 2
+
 
 Description: the function which implements the effect of the "Adventurer" card,
 adventurerCard() seems to only cause the player to draw 1 treasure card instead
