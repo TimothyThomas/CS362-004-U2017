@@ -1,0 +1,1362 @@
+Result for running dominion.c tests:
+unittest1.c:
+getCost(smithy) PASS
+getCost(gold) PASS
+getCost(feast) PASS
+getCost(0) PASS
+getCost(-1) PASS
+getCost(INT_MAX) PASS
+getCost(-INT_MAX) PASS
+Function 'updateCoins'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:0.00% of 206
+Branches executed:0.00% of 179
+Taken at least once:0.00% of 179
+Calls executed:0.00% of 62
+
+Function 'play_sea_hag'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+Function 'play_embargo'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 1
+
+Function 'play_village'
+Lines executed:0.00% of 5
+No branches
+Calls executed:0.00% of 2
+
+Function 'play_adventurer'
+Lines executed:0.00% of 17
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+Calls executed:0.00% of 2
+
+Function 'play_smithy'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+
+Function 'getCost'
+Lines executed:23.33% of 30
+Branches executed:100.00% of 28
+Taken at least once:17.86% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:0.00% of 22
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 42
+Taken at least once:0.00% of 42
+Calls executed:0.00% of 3
+
+Function 'isGameOver'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 9
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+Calls executed:0.00% of 2
+
+Function 'initializeGame'
+Lines executed:0.00% of 62
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:1.25% of 559
+Branches executed:6.71% of 417
+Taken at least once:1.20% of 417
+Calls executed:0.00% of 95
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+scoreFor() test curse PASS
+scoreFor() test estate PASS
+scoreFor() test duchy PASS
+scoreFor() test province PASS
+scoreFor() test_great hall PASS
+scoreFor() feast hall PASS
+scoreFor() test gardens (count=3) PASS
+scoreFor() test gardens (count=9) PASS
+scoreFor() test gardens (count=10) **FAIL**. Exepected 10, got 0
+scoreFor() test sum **FAIL**. Exepected 72, got 60
+scoreFor() test zero cards PASS
+Function 'updateCoins'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:0.00% of 206
+Branches executed:0.00% of 179
+Taken at least once:0.00% of 179
+Calls executed:0.00% of 62
+
+Function 'play_sea_hag'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+Function 'play_embargo'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 1
+
+Function 'play_village'
+Lines executed:0.00% of 5
+No branches
+Calls executed:0.00% of 2
+
+Function 'play_adventurer'
+Lines executed:0.00% of 17
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+Calls executed:0.00% of 2
+
+Function 'play_smithy'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+
+Function 'getCost'
+Lines executed:23.33% of 30
+Branches executed:100.00% of 28
+Taken at least once:17.86% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:0.00% of 22
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:100.00% of 24
+Branches executed:100.00% of 42
+Taken at least once:100.00% of 42
+Calls executed:100.00% of 3
+
+Function 'isGameOver'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:100.00% of 9
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+Calls executed:0.00% of 2
+
+Function 'initializeGame'
+Lines executed:0.00% of 62
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:7.16% of 559
+Branches executed:19.66% of 417
+Taken at least once:14.15% of 417
+Calls executed:3.16% of 95
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+fullDeckCount() test 0 cards in each pile PASS
+fullDeckCount() test 1 curse in hand, non-curse in deck/discard: PASS
+fullDeckCount() test 1 card in each pile PASS
+fullDeckCount() test 1 card in each pile PASS
+fullDeckCount() test 1 card in each pile PASS
+fullDeckCount() test 1 card in each pile PASS
+Function 'updateCoins'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:0.00% of 206
+Branches executed:0.00% of 179
+Taken at least once:0.00% of 179
+Calls executed:0.00% of 62
+
+Function 'play_sea_hag'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+Function 'play_embargo'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 1
+
+Function 'play_village'
+Lines executed:0.00% of 5
+No branches
+Calls executed:0.00% of 2
+
+Function 'play_adventurer'
+Lines executed:0.00% of 17
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+Calls executed:0.00% of 2
+
+Function 'play_smithy'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+
+Function 'getCost'
+Lines executed:23.33% of 30
+Branches executed:100.00% of 28
+Taken at least once:17.86% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:0.00% of 22
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:100.00% of 24
+Branches executed:100.00% of 42
+Taken at least once:100.00% of 42
+Calls executed:100.00% of 3
+
+Function 'isGameOver'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:100.00% of 9
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+Calls executed:0.00% of 2
+
+Function 'initializeGame'
+Lines executed:0.00% of 62
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:7.16% of 559
+Branches executed:19.66% of 417
+Taken at least once:14.15% of 417
+Calls executed:3.16% of 95
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+isGameOver() all supply piles >0 PASS
+isGameOver() test provinces = 0; all supply piles >0 PASS
+isGameOver() test provinces > 0; two supply piles =0 PASS
+isGameOver() test provinces > 0; 3 supply piles =0 PASS
+isGameOver() test provinces = 0; 3 supply piles =0 PASS
+Function 'updateCoins'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:0.00% of 206
+Branches executed:0.00% of 179
+Taken at least once:0.00% of 179
+Calls executed:0.00% of 62
+
+Function 'play_sea_hag'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+Function 'play_embargo'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 1
+
+Function 'play_village'
+Lines executed:0.00% of 5
+No branches
+Calls executed:0.00% of 2
+
+Function 'play_adventurer'
+Lines executed:0.00% of 17
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+Calls executed:0.00% of 2
+
+Function 'play_smithy'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+
+Function 'getCost'
+Lines executed:23.33% of 30
+Branches executed:100.00% of 28
+Taken at least once:17.86% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:0.00% of 22
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:100.00% of 24
+Branches executed:100.00% of 42
+Taken at least once:100.00% of 42
+Calls executed:100.00% of 3
+
+Function 'isGameOver'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:100.00% of 9
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+Calls executed:0.00% of 2
+
+Function 'initializeGame'
+Lines executed:0.00% of 62
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:8.94% of 559
+Branches executed:21.58% of 417
+Taken at least once:16.07% of 417
+Calls executed:3.16% of 95
+Creating 'dominion.c.gcov'
+
+cardtest1.c:
+play_adventurer() test 1 additional card in hand **FAIL**. Exepected handCount=6, got handCount=7
+play_adventurer() test 2 gold cards in hand PASS
+play_adventurer() test cards came from player 0 piles PASS
+play_adventurer() adventurer removed from hand **FAIL**
+play_adventurer player 1 hand count PASS
+play_adventurer player 1 deck count PASS
+play_adventurer player 1 discard count PASS
+Function 'updateCoins'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:0.00% of 206
+Branches executed:0.00% of 179
+Taken at least once:0.00% of 179
+Calls executed:0.00% of 62
+
+Function 'play_sea_hag'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+Function 'play_embargo'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 1
+
+Function 'play_village'
+Lines executed:0.00% of 5
+No branches
+Calls executed:0.00% of 2
+
+Function 'play_adventurer'
+Lines executed:94.12% of 17
+Branches executed:100.00% of 12
+Taken at least once:75.00% of 12
+Calls executed:50.00% of 2
+
+Function 'play_smithy'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+
+Function 'getCost'
+Lines executed:23.33% of 30
+Branches executed:100.00% of 28
+Taken at least once:17.86% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:36.36% of 22
+Branches executed:33.33% of 6
+Taken at least once:16.67% of 6
+Calls executed:0.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:100.00% of 24
+Branches executed:100.00% of 42
+Taken at least once:100.00% of 42
+Calls executed:100.00% of 3
+
+Function 'isGameOver'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:100.00% of 9
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+Calls executed:0.00% of 2
+
+Function 'initializeGame'
+Lines executed:0.00% of 62
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:13.24% of 559
+Branches executed:24.94% of 417
+Taken at least once:18.47% of 417
+Calls executed:4.21% of 95
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+play_smithy() test 3 drawn, 1 discarded **FAIL**. Exepected handCount=12, got handCount=10
+play_smithy() test cards came from player 0 piles **FAIL**
+play_smithy player 1 hand count PASS
+play_smithy player 1 deck count PASS
+play_smithy player 1 discard count PASS
+play_smithy() smithy removed from hand PASS
+play_smithy() smithy put in playedCards PASS
+Function 'updateCoins'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:84.62% of 13
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:0.00% of 206
+Branches executed:0.00% of 179
+Taken at least once:0.00% of 179
+Calls executed:0.00% of 62
+
+Function 'play_sea_hag'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+Function 'play_embargo'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 1
+
+Function 'play_village'
+Lines executed:0.00% of 5
+No branches
+Calls executed:0.00% of 2
+
+Function 'play_adventurer'
+Lines executed:94.12% of 17
+Branches executed:100.00% of 12
+Taken at least once:75.00% of 12
+Calls executed:50.00% of 2
+
+Function 'play_smithy'
+Lines executed:100.00% of 5
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 2
+
+Function 'getCost'
+Lines executed:23.33% of 30
+Branches executed:100.00% of 28
+Taken at least once:17.86% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:36.36% of 22
+Branches executed:33.33% of 6
+Taken at least once:16.67% of 6
+Calls executed:0.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:100.00% of 24
+Branches executed:100.00% of 42
+Taken at least once:100.00% of 42
+Calls executed:100.00% of 3
+
+Function 'isGameOver'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:100.00% of 9
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+Calls executed:0.00% of 2
+
+Function 'initializeGame'
+Lines executed:0.00% of 62
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:16.10% of 559
+Branches executed:26.86% of 417
+Taken at least once:19.66% of 417
+Calls executed:6.32% of 95
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+play_village() test 1 drawn, 1 discarded PASS
+play_village() test drawn card came from player 0 piles PASS
+play_village player 1 hand count PASS
+play_village player 1 deck count PASS
+play_village player 1 discard count PASS
+play_village() test 2 actions added PASS
+play_village() village removed from hand PASS
+play_village() village put in playedCards PASS
+Function 'updateCoins'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:84.62% of 13
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:0.00% of 206
+Branches executed:0.00% of 179
+Taken at least once:0.00% of 179
+Calls executed:0.00% of 62
+
+Function 'play_sea_hag'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+Function 'play_embargo'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 1
+
+Function 'play_village'
+Lines executed:100.00% of 5
+No branches
+Calls executed:100.00% of 2
+
+Function 'play_adventurer'
+Lines executed:94.12% of 17
+Branches executed:100.00% of 12
+Taken at least once:75.00% of 12
+Calls executed:50.00% of 2
+
+Function 'play_smithy'
+Lines executed:100.00% of 5
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 2
+
+Function 'getCost'
+Lines executed:23.33% of 30
+Branches executed:100.00% of 28
+Taken at least once:17.86% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:36.36% of 22
+Branches executed:33.33% of 6
+Taken at least once:16.67% of 6
+Calls executed:0.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:100.00% of 24
+Branches executed:100.00% of 42
+Taken at least once:100.00% of 42
+Calls executed:100.00% of 3
+
+Function 'isGameOver'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:100.00% of 9
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+Calls executed:0.00% of 2
+
+Function 'initializeGame'
+Lines executed:0.00% of 62
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:16.99% of 559
+Branches executed:26.86% of 417
+Taken at least once:19.66% of 417
+Calls executed:8.42% of 95
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+play_sea_hag() test P1 top of deck discarded **FAIL**
+play_sea_hag() test P0 top of deck is not curse PASS
+play_sea_hag() test P1 top of deck is curse **FAIL**
+play_sea_hag() test P1 deck count unchanged PASS
+play_sea_hag() discard count incremented by 1 **FAIL**
+play_sea_hag() test sea_hag removed from P0 hand **FAIL**
+Function 'updateCoins'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:84.62% of 13
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:0.00% of 206
+Branches executed:0.00% of 179
+Taken at least once:0.00% of 179
+Calls executed:0.00% of 62
+
+Function 'play_sea_hag'
+Lines executed:100.00% of 7
+Branches executed:100.00% of 4
+Taken at least once:100.00% of 4
+No calls
+
+Function 'play_embargo'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 1
+
+Function 'play_village'
+Lines executed:100.00% of 5
+No branches
+Calls executed:100.00% of 2
+
+Function 'play_adventurer'
+Lines executed:94.12% of 17
+Branches executed:100.00% of 12
+Taken at least once:75.00% of 12
+Calls executed:50.00% of 2
+
+Function 'play_smithy'
+Lines executed:100.00% of 5
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 2
+
+Function 'getCost'
+Lines executed:23.33% of 30
+Branches executed:100.00% of 28
+Taken at least once:17.86% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:36.36% of 22
+Branches executed:33.33% of 6
+Taken at least once:16.67% of 6
+Calls executed:0.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:100.00% of 24
+Branches executed:100.00% of 42
+Taken at least once:100.00% of 42
+Calls executed:100.00% of 3
+
+Function 'isGameOver'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:100.00% of 9
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+Calls executed:0.00% of 2
+
+Function 'initializeGame'
+Lines executed:0.00% of 62
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:18.25% of 559
+Branches executed:27.82% of 417
+Taken at least once:20.62% of 417
+Calls executed:8.42% of 95
+Creating 'dominion.c.gcov'
+

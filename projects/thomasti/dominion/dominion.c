@@ -699,8 +699,8 @@ int play_village(int player, struct gameState *state, int handPos) {
       drawCard(player, state);
 			
       //+2 Actions
-      //state->numActions = state->numActions + 2;  // No Bug
-      state->coins = state->coins + 2;   // BUG!
+      state->numActions = state->numActions + 2;  // No Bug
+      //state->coins = state->coins + 2;   // BUG!
 			
       //discard played card from hand
       discardCard(handPos, player, state, 0);
